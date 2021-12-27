@@ -2,6 +2,7 @@ import argparse
 import copy
 import os
 import time
+import warnings
 
 import mmcv
 import mmdet
@@ -16,6 +17,8 @@ from mmdet.models import build_detector
 from mmdet.utils import collect_env, get_root_logger
 
 from utils.dataset import build_dataset
+
+warnings.filterwarnings("ignore")
 
 
 def train(args):
@@ -66,7 +69,7 @@ def train(args):
     model = build_detector(cfg.model,
                            train_cfg=cfg.get('train_cfg'),
                            test_cfg=cfg.get('test_cfg'))
-
+    model.init_weights()
     datasets = [build_dataset(cfg.data.train)]
     if len(cfg.workflow) == 2:
         val_dataset = copy.deepcopy(cfg.data.val)
