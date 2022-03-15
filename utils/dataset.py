@@ -12,11 +12,6 @@ class INSDataset(CocoDataset):
 
 
 @DATASETS.register_module()
-class DAMAGEDataset(CocoDataset):
-    CLASSES = ('scratch', 'dent', 'crack', 'gap', 'paint')
-
-
-@DATASETS.register_module()
 class MOSAICDataset:
     def __init__(self, dataset, image_size, pipeline):
         self.dataset = dataset

@@ -3,7 +3,7 @@
 #### Train
 
 * Install [mmdet](https://github.com/open-mmlab/mmdetection) toolbox
-* Register your dataset to `utils/dataset.py`, see `DAMAGEDataset`
+* Register your dataset to `utils/dataset.py`, see `INSDataset`
 * See `nets/exp01.py` for using `MOSAIC` and `MixUp` data pipeline
 * See `nets/exp02.py` for using `RandomAugment` data pipeline
 * Run `bash ./main.sh ./nets/exp01.py $ --train` for training, `$` is number of GPUs
